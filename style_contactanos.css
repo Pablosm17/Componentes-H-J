@@ -1,0 +1,407 @@
+:root {
+    --title: 35px;
+    --text: 19px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    background: #000;
+    overflow-x: hidden;
+}
+
+
+/* Navegation Menu */
+
+#header {
+    position: relative;
+    width: 100%;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.7);
+    ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+}
+
+.menu .logo-box {
+    margin-left: 20px;
+}
+
+.menu .logo-box h1 a {
+    text-decoration: none;
+    font-size: var(--title);
+    font-weight: 400;
+    color: #fff;
+}
+
+.menu .list-container {
+    margin-right: 20px;
+}
+
+.menu .list-container ul {
+    display: flex;
+}
+
+.menu .list-container ul li {
+    list-style: none;
+}
+
+.menu .list-container ul li a {
+    text-decoration: none;
+    margin: 0px 10px;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+    transition: all 0.5s;
+    font-size: 20px;
+}
+
+.menu .list-container ul li a.active {
+    background: #7B3AC3;
+    color: #fff;
+}
+
+.menu .list-container ul li a:hover {
+    background: #7B3AC3;
+    color: #fff;
+}
+
+.checkbtn {
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media only screen and (max-width:910px) {
+    .checkbtn {
+        display: block;
+        position: absolute;
+        right: 30px;
+        top: 10px;
+        font-size: 28px;
+        color: #fff;
+        transition: all .5s;
+        cursor: pointer;
+    }
+    .checkbtn:hover {
+        color: #ffffff9f;
+    }
+    .menu .logo-box {
+        margin-left: 30px;
+        margin-bottom: 10px;
+    }
+    .menu .list-container {
+        position: fixed;
+        top: 67px;
+        margin-right: -0.1px;
+        background: #000;
+        width: 100%;
+        height: 100vh;
+        right: -100%;
+        transition: right .7s;
+    }
+    .menu .list-container .lists {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-top: 4px solid #7B3AC3;
+    }
+    .menu .list-container ul li {
+        width: 90%;
+        border-bottom: 2px solid #7B3AC3;
+        display: flex;
+        justify-content: center;
+    }
+    .menu .list-container ul li a {
+        font-size: 20px;
+        text-align: center;
+        padding: 20px 0px;
+    }
+    .menu .list-container ul li a.active {
+        background: none;
+        color: #fff;
+    }
+    .menu .list-container ul li a:hover {
+        background: none;
+        color: #7B3AC3;
+    }
+    #check:checked~div {
+        right: 0;
+    }
+}
+
+
+/* Pié de pág. */
+
+.footer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.img-fondo {
+    background: url(img/componentes/imgfondo-contacto.jpg);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.footer .footer-content {
+    padding-top: 100px;
+    width: 100%;
+    margin: auto;
+    padding-bottom: 100px;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.footer .footer-content .footer-title {
+    width: 50%;
+    margin: auto;
+    padding: 15px;
+}
+
+.footer .footer-content .footer-title h2 {
+    font-size: 55px;
+    font-weight: 500;
+    color: #7B3AC3;
+    text-align: center;
+    margin-bottom: 5px;
+    text-shadow: 0.028em 0.028em #C48FFF;
+}
+
+.footer .formulario-content {
+    width: 60%;
+    margin: 50px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 50px;
+    border: 2px solid #7B3AC3;
+}
+
+.footer .formulario-content #formulario {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer .formulario-content #formulario label {
+    font-size: 20px;
+    text-align: center;
+    color: #000;
+    margin: 30px 0px 10px 0px;
+}
+
+.footer .formulario-content #formulario input {
+    width: 90%;
+    height: 40px;
+    margin: auto;
+    border-radius: 24px;
+    outline: none;
+    border: 2px solid #7B3AC3;
+    text-align: center;
+    font-size: 18px;
+    color: #000;
+}
+
+.footer .formulario-content #formulario .send {
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer .formulario-content #formulario button {
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    background: #7B3AC3;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.footer .formulario-content #formulario button:hover {
+    background: #C48FFF;
+}
+
+.footer .formulario-content #formulario .mensaje-form {
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+}
+
+.footer .formulario-content #formulario .mensaje-form p {
+    text-align: center;
+    font-size: 20px;
+    color: #000;
+    line-height: 35px;
+}
+
+.footer .footer-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid #fff;
+}
+
+.footer .footer-text p {
+    font-size: 25px;
+    text-align: center;
+    color: #fff;
+    font-style: italic;
+}
+
+.iconos {
+    display: flex;
+    justify-content: center;
+}
+
+.iconos img {
+    margin: 30px;
+    transition: all 0.5s ease-out;
+}
+
+.iconos img:hover {
+    border-radius: 50px;
+}
+
+@media only screen and (max-width:900px) {
+    .footer .formulario-content {
+        width: 85%;
+        padding: 20px;
+    }
+    .footer .formulario-content #formulario input {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:590px) {
+    .footer .footer-content .footer-title h2 {
+        font-size: 40px;
+    }
+    .footer .formulario-content {
+        width: 90%;
+        padding: 20px;
+    }
+    .footer .formulario-content #formulario label {
+        font-size: 17px;
+    }
+    .footer .formulario-content #formulario input {
+        width: 100%;
+        font-size: 17px;
+    }
+    .footer .formulario-content #formulario .mensaje-form p {
+        font-size: 17px;
+    }
+    .footer .footer-text {
+        width: 100%;
+        padding: 0px 30px;
+    }
+    .footer .footer-text p {
+        font-size: 18px;
+    }
+    .iconos img {
+        width: 50px;
+        height: 50px;
+        margin: 25px;
+    }
+}
+
+@media only screen and (max-width:390px) {
+    .footer .footer-content .footer-title h2 {
+        font-size: 32px;
+    }
+    .footer .formulario-content {
+        width: 80%;
+        padding: 30px;
+    }
+    .footer .formulario-content #formulario label {
+        font-size: 13px;
+    }
+    .footer .formulario-content #formulario input {
+        font-size: 13px;
+    }
+    .footer .formulario-content #formulario .mensaje-form p {
+        font-size: 13px;
+    }
+    .footer .footer-text {
+        padding: 0px 10px;
+    }
+    .footer .footer-text p {
+        font-size: 14px;
+    }
+    .iconos img {
+        width: 40px;
+        height: 40px;
+        margin: 15px;
+    }
+    .menu .logo-box h1 a {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (max-width:300px) {
+    .footer .footer-content .footer-title h2 {
+        font-size: 28px;
+    }
+    .footer .formulario-content {
+        width: 80%;
+        padding: 20px;
+    }
+    .footer .formulario-content #formulario label {
+        font-size: 11px;
+    }
+    .footer .formulario-content #formulario input {
+        font-size: 11px;
+    }
+    .footer .formulario-content #formulario .mensaje-form p {
+        font-size: 11px;
+    }
+    .footer .footer-text {
+        padding: 0;
+    }
+    .footer .footer-text p {
+        font-size: 12px;
+    }
+    .iconos img {
+        width: 35px;
+        height: 35px;
+        margin: 100px 10px;
+    }
+    .menu .logo-box h1 a {
+        font-size: 25px;
+        margin-left: -20px;
+    }
+}
